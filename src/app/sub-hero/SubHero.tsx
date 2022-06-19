@@ -1,6 +1,5 @@
 import React from "react";
-
-import { ReactComponent as ArrowRight } from "../../common/ui/assets/images/arrow-right.svg";
+import MoreText from "../../common/ui/components/MoreText";
 
 import styles from "./SubHero.module.scss";
 
@@ -14,26 +13,44 @@ const SubHero = () => {
       <div className={styles.content}>
         <div className={styles.title}>
           <h3>66+ Breeds For you to discover</h3>
-          <span>
-            see more <ArrowRight />
-          </span>
+          <MoreText text="see more" />
         </div>
 
         <div className={styles.cards}>
           <div className={styles.card}>
-            <img src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg" alt="" />
+            <div className={styles.wrapper}>
+              <img
+                src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg"
+                alt=""
+              />
+            </div>
             <p>Bengal</p>
           </div>
           <div className={styles.card}>
-            <img src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg" alt="" />
+            <div className={styles.wrapper}>
+              <img
+                src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg"
+                alt=""
+              />
+            </div>
             <p>Bengal</p>
           </div>
           <div className={styles.card}>
-            <img src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg" alt="" />
+            <div className={styles.wrapper}>
+              <img
+                src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg"
+                alt=""
+              />
+            </div>
             <p>Bengal</p>
           </div>
           <div className={styles.card}>
-            <img src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg" alt="" />
+            <div className={styles.wrapper}>
+              <img
+                src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg"
+                alt=""
+              />
+            </div>
             <p>Bengal</p>
           </div>
         </div>

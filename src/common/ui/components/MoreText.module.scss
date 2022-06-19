@@ -1,0 +1,19 @@
+@use "../assets/colors";
+
+.more {
+  display: flex;
+  align-items: center;
+  color: rgba(41, 21, 7, 0.6);
+  font-weight: 700;
+  font-size: 18px;
+  gap: 0 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  svg {
+    fill: colors.$dark-secondary;
+    width: 28px;
+    position: relative;
+    top: 1px;
+  }
+}

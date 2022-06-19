@@ -1,0 +1,79 @@
+@use "../../common/ui/assets/colors";
+
+.introduction {
+  padding: 80px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .content {
+    max-width: 45%;
+    width: 100%;
+    color: colors.$text-default;
+
+    h2 {
+      font-size: 48px;
+      font-weight: 700;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: colors.$brown;
+        border-radius: 77px;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 65px;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0 27px;
+
+    .col {
+      width: 100%;
+
+      .wrapper {
+        width: 100%;
+
+        img {
+          border-radius: 24px;
+          max-width: 273px;
+          display: block;
+          margin-left: auto;
+        }
+
+        .img-row {
+          width: 100%;
+        }
+
+        .img-col {
+          max-width: 167px;
+          min-height: 273px;
+        }
+      }
+
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 27px 0;
+      }
+
+      &:last-child {
+        .img-col {
+          max-width: 238px;
+        }
+      }
+    }
+  }
+}

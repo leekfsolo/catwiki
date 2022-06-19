@@ -2,7 +2,7 @@
 
 .hero {
   background-color: colors.$bg-hero;
-  padding: 50px;
+  padding: 50px 100px;
   color: colors.$text-white;
   position: relative;
   border-top-left-radius: 50px;
@@ -67,7 +67,7 @@
   .img {
     position: absolute;
     top: 0;
-    right: 50px;
+    right: 80px;
     height: 100%;
   }
 }

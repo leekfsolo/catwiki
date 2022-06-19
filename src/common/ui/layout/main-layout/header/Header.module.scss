@@ -1,0 +1,21 @@
+@use "../../../assets/colors";
+
+.header {
+  p {
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+    font-family: "Mystery Quest", cursive;
+    font-size: 24px;
+    color: colors.$text-default;
+
+    span {
+      position: relative;
+      top: 2px;
+
+      img {
+        width: 28px;
+      }
+    }
+  }
+}

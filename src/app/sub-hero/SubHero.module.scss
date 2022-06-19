@@ -1,0 +1,89 @@
+@use "../../common/ui/assets/colors";
+
+.sub-hero {
+  background-color: colors.$secondary;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 100%;
+  padding: 50px;
+
+  .headings {
+    margin-bottom: 40px;
+
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: colors.$brown;
+        border-radius: 77px;
+      }
+    }
+  }
+
+  .content {
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 45px;
+
+      h3 {
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0;
+        width: 40%;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        color: rgba(41, 21, 7, 0.6);
+        font-weight: 700;
+        font-size: 18px;
+        gap: 0 5px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        svg {
+          fill: colors.$dark-secondary;
+          width: 28px;
+          position: relative;
+          top: 1px;
+        }
+      }
+    }
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .card {
+      width: 220px;
+
+      img {
+        width: 100%;
+        max-height: 220px;
+        object-fit: cover;
+        border-radius: 24px;
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 18px;
+        color: colors.$text-default;
+      }
+    }
+  }
+}

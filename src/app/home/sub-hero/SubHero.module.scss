@@ -56,12 +56,53 @@
     width: 100%;
 
     .card {
-      width: 220px;
-
       p {
         font-weight: 600;
         font-size: 18px;
         color: colors.$text-default;
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .sub-hero {
+    padding: 20px 25px;
+
+    .headings {
+      margin-bottom: 25px;
+
+      h2 {
+        font-size: 12px;
+
+        &::before {
+          width: 40px;
+        }
+      }
+    }
+
+    .content {
+      .title {
+        margin-bottom: 25px;
+
+        h3 {
+          font-size: 18px;
+          width: 50%;
+        }
+
+        a {
+          display: none;
+        }
+      }
+    }
+
+    .cards {
+      flex-wrap: wrap;
+
+      .card {
+        p {
+          font-size: 12px;
+        }
       }
     }
   }

@@ -1,3 +1,9 @@
 .layout {
   padding: 36px 128px 0 128px;
 }
+
+@media (max-width: 376px) {
+  .layout {
+    padding: 18px 18px 0 18px;
+  }
+}

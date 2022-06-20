@@ -50,14 +50,12 @@ const SubHero: FC<Props> = (props: Props) => {
           {mostSearchedBreeds &&
             mostSearchedBreeds.map((breed, idx) => (
               <div className={styles.card} key={idx}>
-                <div className={styles.wrapper}>
-                  <ImageWrapper
-                    url={breed.image}
-                    alt={breed.name}
-                    highlight={idx === 0}
-                    size="sm"
-                  />
-                </div>
+                <ImageWrapper
+                  url={breed.image}
+                  alt={breed.name}
+                  highlight={idx === 0}
+                  size="sm"
+                />
                 <p>{breed.name}</p>
               </div>
             ))}

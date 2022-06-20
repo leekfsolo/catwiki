@@ -47,3 +47,18 @@
     }
   }
 }
+
+@media (max-width: 376px) {
+  .wrapper {
+    &.sm {
+      img {
+        width: 134px;
+        height: 134px;
+      }
+    }
+
+    &.highlight::before {
+      left: -5px;
+    }
+  }
+}

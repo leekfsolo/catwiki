@@ -22,7 +22,27 @@
   .img {
     position: absolute;
     top: 0;
-    right: 80px;
+    right: 50px;
     height: 100%;
+  }
+}
+
+@media (max-width: 376px) {
+  .hero {
+    padding: 20px 0 25px 30px;
+
+    .content {
+      max-width: 45%;
+
+      .title {
+        font-size: 10px;
+        margin: 7px 0 18px 0;
+      }
+    }
+
+    .img {
+      right: 0px;
+      border-top-right-radius: 50px;
+    }
   }
 }

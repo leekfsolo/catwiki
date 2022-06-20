@@ -81,3 +81,20 @@
     }
   }
 }
+
+@media (max-width: 376px) {
+  .form {
+    margin: 0;
+
+    input {
+      padding: 8px 25px 8px 10px;
+      font-size: 10px;
+    }
+
+    svg {
+      width: 15px;
+      right: 5px;
+      top: -7px;
+    }
+  }
+}

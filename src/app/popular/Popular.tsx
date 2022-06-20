@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ImageWrapper from "../../common/ui/components/image-wrapper";
+import ImageSquareWrapper from "../../common/ui/components/image-square-wrapper";
 import Loading from "../../common/ui/components/loading";
 import MainLayout from "../../common/ui/layout/main-layout";
 import { doGetPopularBreeds } from "../api";
@@ -40,7 +40,11 @@ const Popular = () => {
         <div className={styles.content}>
           {breeds.map((breed, idx) => (
             <div key={idx} className={styles.breed}>
-              <ImageWrapper size="xs" url={breed.image} alt={breed.name} />
+              <ImageSquareWrapper
+                size="xs"
+                url={breed.image}
+                alt={breed.name}
+              />
               <div className={styles.description}>
                 <h2>{`${idx + 1}. ${breed.name}`}</h2>
                 <p>{breed.description}</p>

@@ -17,3 +17,13 @@
     top: 1px;
   }
 }
+
+@media (max-width: 376px) {
+  .more {
+    font-size: 12px;
+
+    svg {
+      width: 22px;
+    }
+  }
+}

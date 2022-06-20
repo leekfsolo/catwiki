@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <Logo variant="white" />
 
-      <p>
+      <p className={styles.footer_text}>
         <span className={styles.icon}>&copy;</span> created by{" "}
         <span className={styles.author}>username</span> - devChallenge.io 2021
       </p>

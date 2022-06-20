@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ImageWrapper from "../../../common/ui/components/image-wrapper";
+import ImageSquareWrapper from "../../../common/ui/components/image-square-wrapper";
 import MoreText from "../../../common/ui/components/more-text";
 import { doGetPopularBreeds } from "../../api";
 import { Breed } from "../model";
@@ -50,7 +50,7 @@ const SubHero: FC<Props> = (props: Props) => {
           {mostSearchedBreeds &&
             mostSearchedBreeds.map((breed, idx) => (
               <div className={styles.card} key={idx}>
-                <ImageWrapper
+                <ImageSquareWrapper
                   url={breed.image}
                   alt={breed.name}
                   highlight={idx === 0}

@@ -28,3 +28,25 @@
     }
   }
 }
+
+@media (max-width: 376px) {
+  .footer {
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 17px;
+
+    p {
+      font-size: 14px !important;
+
+      &.footer_text {
+        font-size: 12px !important;
+
+        .icon {
+          font-size: 24px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

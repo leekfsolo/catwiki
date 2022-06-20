@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import styles from "./ImageWrapper.module.scss";
+import styles from "./ImageSquareWrapper.module.scss";
 
 interface Props {
   url?: string;
@@ -9,7 +9,7 @@ interface Props {
   size: "xs" | "sm" | "md" | "lg";
 }
 
-const ImageWrapper: FC<Props> = (props: Props) => {
+const ImageSquareWrapper: FC<Props> = (props: Props) => {
   const { url = "#", alt = "deadImg", highlight = false, size = "sm" } = props;
 
   return (
@@ -23,4 +23,4 @@ const ImageWrapper: FC<Props> = (props: Props) => {
   );
 };
 
-export default ImageWrapper;
+export default ImageSquareWrapper;

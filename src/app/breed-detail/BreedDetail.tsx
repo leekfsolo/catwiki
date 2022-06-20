@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ImageWrapper from "../../common/ui/components/image-wrapper";
+import ImageSquareWrapper from "../../common/ui/components/image-square-wrapper";
 import Loading from "../../common/ui/components/loading";
 import MainLayout from "../../common/ui/layout/main-layout";
 import { doGetBreedImages } from "../api";
@@ -85,7 +85,7 @@ const BreedDetail = () => {
         <main>
           <section className={styles.breed}>
             <div className={styles["breed-img"]}>
-              <ImageWrapper
+              <ImageSquareWrapper
                 url={breed.image}
                 alt={breed.name}
                 highlight
@@ -119,7 +119,7 @@ const BreedDetail = () => {
               {breed &&
                 breed.photos &&
                 breed.photos.map((photo, idx) => (
-                  <ImageWrapper url={photo} alt="" key={idx} size="md" />
+                  <ImageSquareWrapper url={photo} alt="" key={idx} size="md" />
                 ))}
             </div>
           </section>

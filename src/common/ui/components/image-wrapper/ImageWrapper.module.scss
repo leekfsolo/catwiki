@@ -5,8 +5,6 @@
   position: relative;
 
   img {
-    width: 100%;
-    max-height: 220px;
     object-fit: cover;
     border-radius: 24px;
   }
@@ -22,5 +20,30 @@
     transform: translateY(-50%);
     border-radius: 14px;
     z-index: -1;
+  }
+
+  &.xs {
+    img {
+      width: 170px;
+      height: 170px;
+    }
+  }
+  &.sm {
+    img {
+      width: 220px;
+      height: 220px;
+    }
+  }
+  &.md {
+    img {
+      width: 270px;
+      height: 270px;
+    }
+  }
+  &.lg {
+    img {
+      width: 370px;
+      height: 370px;
+    }
   }
 }

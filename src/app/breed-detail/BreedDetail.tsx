@@ -85,7 +85,12 @@ const BreedDetail = () => {
         <main>
           <section className={styles.breed}>
             <div className={styles["breed-img"]}>
-              <ImageWrapper url={breed.image} alt={breed.name} highlight />
+              <ImageWrapper
+                url={breed.image}
+                alt={breed.name}
+                highlight
+                size="lg"
+              />
             </div>
             <div className={styles["breed-info"]}>
               <h1>{breed.name}</h1>
@@ -114,7 +119,7 @@ const BreedDetail = () => {
               {breed &&
                 breed.photos &&
                 breed.photos.map((photo, idx) => (
-                  <ImageWrapper url={photo} alt="" key={idx} />
+                  <ImageWrapper url={photo} alt="" key={idx} size="md" />
                 ))}
             </div>
           </section>

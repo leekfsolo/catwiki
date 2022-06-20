@@ -1,29 +1,36 @@
-import React, { useState } from "react";
+import React, { FC, useEffect, useState } from "react";
+import { PropsFromToggle } from "react-bootstrap/esm/DropdownToggle";
 import ImageWrapper from "../../../common/ui/components/image-wrapper";
 import MoreText from "../../../common/ui/components/more-text";
+import { doGetPopularBreeds } from "../../api";
 import { Breed } from "../model";
 
 import styles from "./SubHero.module.scss";
 
-const SubHero = () => {
-  const [mostSearchedBreeds, setMostSearchedBreeds] = useState<Array<Breed>>([
-    {
-      image: "https://cdn2.thecatapi.com/images/byQhFO7iV.jpg",
-      name: "Bengal",
-    },
-    {
-      image: "https://cdn2.thecatapi.com/images/byQhFO7iV.jpg",
-      name: "Bengal",
-    },
-    {
-      image: "https://cdn2.thecatapi.com/images/byQhFO7iV.jpg",
-      name: "Bengal",
-    },
-    {
-      image: "https://cdn2.thecatapi.com/images/byQhFO7iV.jpg",
-      name: "Bengal",
-    },
-  ]);
+interface Props {
+  setIsLoading: (isLoading: boolean) => void;
+}
+
+const SubHero: FC<Props> = (props: Props) => {
+  const { setIsLoading } = props;
+  const [mostSearchedBreeds, setMostSearchedBreeds] = useState<Array<Breed>>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+
+      const response = await doGetPopularBreeds();
+      const responseData = response.data;
+      const breedData = responseData.map((data: any) => {
+        return { name: data.name, image: data.image.url };
+      });
+
+      setMostSearchedBreeds(breedData);
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [setIsLoading]);
 
   return (
     <section className={styles["sub-hero"]}>
@@ -38,18 +45,20 @@ const SubHero = () => {
         </div>
 
         <div className={styles.cards}>
-          {mostSearchedBreeds.map((breed, idx) => (
-            <div className={styles.card} key={idx}>
-              <div className={styles.wrapper}>
-                <ImageWrapper
-                  url={breed.image}
-                  alt={breed.name}
-                  highlight={idx === 0}
-                />
+          {mostSearchedBreeds &&
+            mostSearchedBreeds.map((breed, idx) => (
+              <div className={styles.card} key={idx}>
+                <div className={styles.wrapper}>
+                  <ImageWrapper
+                    url={breed.image}
+                    alt={breed.name}
+                    highlight={idx === 0}
+                    size="sm"
+                  />
+                </div>
+                <p>{breed.name}</p>
               </div>
-              <p>{breed.name}</p>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </section>

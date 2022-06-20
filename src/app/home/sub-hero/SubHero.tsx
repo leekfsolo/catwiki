@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import ImageWrapper from "../../../common/ui/components/image-wrapper";
 import MoreText from "../../../common/ui/components/more-text";
+import { Breed } from "../model";
 
 import styles from "./SubHero.module.scss";
 
 const SubHero = () => {
+  const [mostSearchedBreeds, setMostSearchedBreeds] = useState<Array<Breed>>([
+    {
+      image: "https://cdn2.thecatapi.com/images/byQhFO7iV.jpg",
+      name: "Bengal",
+    },
+    {
+      image: "https://cdn2.thecatapi.com/images/byQhFO7iV.jpg",
+      name: "Bengal",
+    },
+    {
+      image: "https://cdn2.thecatapi.com/images/byQhFO7iV.jpg",
+      name: "Bengal",
+    },
+    {
+      image: "https://cdn2.thecatapi.com/images/byQhFO7iV.jpg",
+      name: "Bengal",
+    },
+  ]);
+
   return (
     <section className={styles["sub-hero"]}>
       <div className={styles.headings}>
@@ -17,42 +38,18 @@ const SubHero = () => {
         </div>
 
         <div className={styles.cards}>
-          <div className={styles.card}>
-            <div className={styles.wrapper}>
-              <img
-                src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg"
-                alt=""
-              />
+          {mostSearchedBreeds.map((breed, idx) => (
+            <div className={styles.card} key={idx}>
+              <div className={styles.wrapper}>
+                <ImageWrapper
+                  url={breed.image}
+                  alt={breed.name}
+                  highlight={idx === 0}
+                />
+              </div>
+              <p>{breed.name}</p>
             </div>
-            <p>Bengal</p>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.wrapper}>
-              <img
-                src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg"
-                alt=""
-              />
-            </div>
-            <p>Bengal</p>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.wrapper}>
-              <img
-                src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg"
-                alt=""
-              />
-            </div>
-            <p>Bengal</p>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.wrapper}>
-              <img
-                src="https://cdn2.thecatapi.com/images/byQhFO7iV.jpg"
-                alt=""
-              />
-            </div>
-            <p>Bengal</p>
-          </div>
+          ))}
         </div>
       </div>
     </section>

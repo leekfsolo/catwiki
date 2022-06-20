@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { ReactComponent as Search } from "../../../../common/ui/assets/images/search.svg";
 import { doGetBreeds } from "../../../api";
+import { Breed } from "../../model";
 
 import styles from "./SearchBar.module.scss";
 
 const SearchBar = () => {
-  const [catList, setCatList] = useState<Array<string>>([]);
+  const [catList, setCatList] = useState<Array<Breed>>([]);
   const [filteredValue, setFilteredValue] = useState<string>("");
   const catInputRef = useRef<HTMLInputElement>(null);
 
@@ -22,7 +24,12 @@ const SearchBar = () => {
         const response = await doGetBreeds(filteredValue);
         const data = response.data;
 
-        setCatList(data.map((item: any) => item.name).sort());
+        setCatList(
+          data.sort((a: Breed, b: Breed) => {
+            if (a.name && b.name) return a.name?.localeCompare(b.name);
+            else return 1;
+          })
+        );
       };
 
       fetchData();
@@ -42,7 +49,9 @@ const SearchBar = () => {
         <div className={styles.list}>
           <ul>
             {catList.map((item, idx) => (
-              <li key={idx}>{item}</li>
+              <li key={idx}>
+                <Link to={item.id || idx.toString()}>{item.name}</Link>
+              </li>
             ))}
           </ul>
         </div>

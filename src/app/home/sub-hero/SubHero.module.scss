@@ -54,40 +54,10 @@
     .card {
       width: 220px;
 
-      .wrapper {
-        z-index: 10;
-
-        img {
-          width: 100%;
-          max-height: 220px;
-          object-fit: cover;
-          border-radius: 24px;
-        }
-      }
-
       p {
         font-weight: 600;
         font-size: 18px;
         color: colors.$text-default;
-      }
-
-      &:first-child {
-        .wrapper {
-          position: relative;
-
-          &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: -10px;
-            width: 47px;
-            height: 80%;
-            background-color: colors.$light-brown;
-            transform: translateY(-50%);
-            border-radius: 14px;
-            z-index: -1;
-          }
-        }
       }
     }
   }

@@ -54,6 +54,13 @@
         &:hover {
           background-color: rgba(151, 151, 151, 0.1);
         }
+
+        a {
+          text-decoration: none;
+          color: colors.$text-default;
+          display: block;
+          width: 100%;
+        }
       }
 
       &::-webkit-scrollbar {

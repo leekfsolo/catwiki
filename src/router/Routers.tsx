@@ -1,6 +1,7 @@
 import React from "react";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import BreedDetail from "../app/breed-detail";
 import Home from "../app/home";
 
 const Routers = () => {
@@ -8,7 +9,7 @@ const Routers = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:name" element={<div />} />
+        <Route path="/:id" element={<BreedDetail />} />
       </Routes>
     </Router>
   );

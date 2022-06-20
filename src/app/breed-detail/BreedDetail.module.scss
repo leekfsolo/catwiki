@@ -1,0 +1,63 @@
+@use "../../common/ui/assets/colors";
+
+.breed {
+  display: grid;
+  grid-template-columns: 350px auto;
+  gap: 0 115px;
+  padding: 50px;
+  color: colors.$text-default;
+
+  .breed-img {
+    img {
+      min-height: 350px;
+    }
+  }
+
+  .breed-info {
+    h1 {
+      font-size: 36px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .description {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 25px 0;
+    }
+
+    .detail {
+      p {
+        font-size: 16px;
+        font-weight: 500;
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+.photos {
+  margin-bottom: 150px;
+
+  h2 {
+    font-size: 600;
+    font-weight: 36px;
+    color: colors.$title-brown;
+    margin-bottom: 40px;
+  }
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 45px 0;
+
+    img {
+      width: 270px;
+      min-height: 270px;
+    }
+  }
+}

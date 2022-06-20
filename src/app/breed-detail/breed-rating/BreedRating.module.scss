@@ -1,0 +1,33 @@
+@use "../../../common/ui/assets/colors";
+
+.content {
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: 180px 400px;
+
+    span {
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+
+    .rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0 10px;
+
+      .bar {
+        width: 60px;
+        height: 12px;
+        border-radius: 8px;
+        background-color: colors.$inactive;
+
+        &.vote {
+          background-color: colors.$active;
+        }
+      }
+    }
+  }
+}

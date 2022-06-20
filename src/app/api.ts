@@ -6,5 +6,5 @@ export const doGetBreeds = (q: string) => {
 };
 
 export const doGetBreedImages = (breed_id: string) => {
-  return doGet(`${CATS_BASE_URL}/images/search`, { breed_id, limit: 10 });
+  return doGet(`${CATS_BASE_URL}/images/search`, { breed_id, limit: 9 });
 };

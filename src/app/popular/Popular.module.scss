@@ -1,0 +1,37 @@
+@use "../../common/ui/assets/colors";
+
+.popular {
+  h1 {
+    font-weight: 700;
+    font-size: 36px;
+    color: colors.$title-brown;
+    margin-bottom: 50px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0;
+
+    .breed {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+
+      .description {
+        color: colors.$text-default;
+
+        h2 {
+          font-size: 36px;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

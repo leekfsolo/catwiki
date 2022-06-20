@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import { PropsFromToggle } from "react-bootstrap/esm/DropdownToggle";
+import { Link } from "react-router-dom";
 import ImageWrapper from "../../../common/ui/components/image-wrapper";
 import MoreText from "../../../common/ui/components/more-text";
 import { doGetPopularBreeds } from "../../api";
@@ -19,7 +19,7 @@ const SubHero: FC<Props> = (props: Props) => {
     const fetchData = async () => {
       setIsLoading(true);
 
-      const response = await doGetPopularBreeds();
+      const response = await doGetPopularBreeds(4);
       const responseData = response.data;
       const breedData = responseData.map((data: any) => {
         return { name: data.name, image: data.image.url };
@@ -41,7 +41,9 @@ const SubHero: FC<Props> = (props: Props) => {
       <div className={styles.content}>
         <div className={styles.title}>
           <h3>66+ Breeds For you to discover</h3>
-          <MoreText text="see more" />
+          <Link to="popular">
+            <MoreText text="see more" />
+          </Link>
         </div>
 
         <div className={styles.cards}>

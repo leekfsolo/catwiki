@@ -1,8 +1,8 @@
 import { doGet } from "../common/utils/baseAPI";
 import { CATS_BASE_URL } from "../common/utils/constant";
 
-export const doGetPopularBreeds = () => {
-  return doGet(`${CATS_BASE_URL}/breeds`, { limit: 4, page: 0 });
+export const doGetPopularBreeds = (limit: number) => {
+  return doGet(`${CATS_BASE_URL}/breeds`, { limit });
 };
 
 export const doGetBreeds = (q: string) => {

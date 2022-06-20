@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { ReactComponent as Search } from "../../../common/ui/assets/images/search.svg";
-import { doGetBreeds } from "../../api";
+import { ReactComponent as Search } from "../../../../common/ui/assets/images/search.svg";
+import { doGetBreeds } from "../../../api";
 
 import styles from "./SearchBar.module.scss";
 

@@ -1,10 +1,10 @@
 import React from "react";
 
-import catLogo from "../../common/ui/assets/images/cat-hero.png";
-import Logo from "../../common/ui/components/logo";
+import catLogo from "../../../common/ui/assets/images/cat-hero.png";
+import Logo from "../../../common/ui/components/logo";
+import SearchBar from "./search-bar";
 
 import styles from "./Hero.module.scss";
-import SearchBar from "./search-bar";
 
 const Hero = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import MoreText from "../../common/ui/components/more-text";
+import MoreText from "../../../common/ui/components/more-text";
 
 import styles from "./Introduction.module.scss";
 

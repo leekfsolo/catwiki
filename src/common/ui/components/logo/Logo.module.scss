@@ -1,0 +1,52 @@
+@use "../../assets/colors";
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: "Mystery Quest", cursive;
+  margin: 0;
+
+  span {
+    position: relative;
+  }
+
+  &.white {
+    img {
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg)
+        brightness(111%) contrast(101%);
+    }
+  }
+
+  &.sm {
+    font-size: 24px;
+    font-weight: 400;
+    gap: 0 5px;
+
+    span {
+      top: 2px;
+
+      img {
+        width: 28px;
+      }
+    }
+  }
+
+  &.md {
+    font-size: 48px;
+    font-family: 500;
+  }
+
+  &.lg {
+    font-size: 64px;
+    font-weight: 700;
+    gap: 0 15px;
+
+    span {
+      top: 10px;
+
+      img {
+        width: 64px;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from "react";
+import Footer from "./footer";
 import Header from "./header";
 
 import styles from "./MainLayout.module.scss";
@@ -12,6 +13,7 @@ const MainLayout: FC<Props> = (props: Props) => {
     <div className={styles.layout}>
       <Header />
       {props.children}
+      <Footer />
     </div>
   );
 };

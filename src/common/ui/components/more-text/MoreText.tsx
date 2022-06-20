@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
 import styles from "./MoreText.module.scss";
-import { ReactComponent as ArrowRight } from "../assets/images/arrow-right.svg";
+import { ReactComponent as ArrowRight } from "../../assets/images/arrow-right.svg";
 
 interface Props {
   text: string;

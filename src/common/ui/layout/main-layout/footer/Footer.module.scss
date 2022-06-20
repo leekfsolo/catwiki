@@ -1,0 +1,28 @@
+@use "../../../assets/colors";
+
+.footer {
+  background-color: colors.$black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px 20px 100px;
+  color: colors.$white;
+  border-top-left-radius: 42px;
+  border-top-right-radius: 42px;
+
+  p {
+    font-size: 18px;
+
+    .icon {
+      display: inline-block;
+      margin-right: 10px;
+      position: relative;
+      top: 1px;
+    }
+
+    .author {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+}

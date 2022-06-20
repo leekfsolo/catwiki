@@ -3,7 +3,7 @@
 .hero {
   background-color: colors.$bg-hero;
   padding: 50px 100px;
-  color: colors.$text-white;
+  color: colors.$white;
   position: relative;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -12,27 +12,7 @@
   .content {
     max-width: 30%;
 
-    h1 {
-      display: flex;
-      align-items: center;
-      gap: 0 15px;
-      font-family: "Mystery Quest", cursive;
-      font-size: 64px;
-      margin: 0;
-
-      span {
-        position: relative;
-        top: 10px;
-
-        img {
-          width: 64px;
-          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg)
-            brightness(111%) contrast(101%);
-        }
-      }
-    }
-
-    p {
+    .title {
       font-size: 24px;
       font-weight: 500;
       margin: 0;

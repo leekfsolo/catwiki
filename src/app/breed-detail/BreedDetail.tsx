@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ImageSquareWrapper from "../../common/ui/components/image-square-wrapper";
 import Loading from "../../common/ui/components/loading";
 import MainLayout from "../../common/ui/layout/main-layout";
@@ -13,6 +13,7 @@ const BreedDetail = () => {
   const [breed, setBreed] = useState<Breed>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { breed_id } = useParams();
+  const navigate = useNavigate();
 
   let breed_num_data: Array<any> = [];
   if (breed) {
@@ -31,6 +32,13 @@ const BreedDetail = () => {
       const fetchData = async () => {
         const response = await doGetBreedImages(breed_id);
         const responseData = response.data;
+
+        if (responseData.length === 0) {
+          setIsLoading(false);
+          alert("Your breed is not found");
+          navigate("/", { replace: true });
+        }
+
         const [image, ...photos] = responseData.map((data: any) => data.url);
 
         const breedData = responseData[0].breeds[0];

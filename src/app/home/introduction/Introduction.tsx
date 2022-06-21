@@ -1,9 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import MoreText from "../../../common/ui/components/more-text";
+import { Breed } from "../model";
 
 import styles from "./Introduction.module.scss";
 
-const Introduction = () => {
+interface Props {
+  mostSearchedBreeds: Array<Breed>;
+}
+
+const Introduction: FC<Props> = (props: Props) => {
+  const { mostSearchedBreeds } = props;
+  let firstBreedId = "";
+  if (mostSearchedBreeds && mostSearchedBreeds[0] && mostSearchedBreeds[0].id)
+    firstBreedId = mostSearchedBreeds[0].id;
+
   return (
     <section className={styles.introduction}>
       <div className={styles.content}>
@@ -12,7 +23,9 @@ const Introduction = () => {
           Having a cat around you can actually trigger the release of calming
           chemicals in your body which lower your stress and anxiety leves
         </p>
-        <MoreText text="read more" />
+        <Link to={firstBreedId}>
+          <MoreText text="read more" />
+        </Link>
       </div>
       <div className={styles.grid}>
         <div className={styles.col}>

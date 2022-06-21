@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { ReactComponent as Search } from "../../../../common/ui/assets/images/search.svg";
 import ModalSearch from "../../../../common/ui/components/modal/ModalSearch";
@@ -16,14 +16,22 @@ interface Props {
 
 const SearchBar: FC<Props> = (props: Props) => {
   const { isShowModal, setIsShowModal } = props;
+
   const [catList, setCatList] = useState<Array<Breed>>([]);
   const [filteredValue, setFilteredValue] = useState<string>("");
   const catInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
   const { width } = useWindowSize();
 
   const catInputHandler = () => {
     if (catInputRef.current) {
       setFilteredValue(catInputRef.current.value);
+    }
+  };
+
+  const searchInputHandler = () => {
+    if (catList.length > 0) {
+      navigate(catList[0].id || "", { replace: true });
     }
   };
 
@@ -54,8 +62,8 @@ const SearchBar: FC<Props> = (props: Props) => {
         onInput={catInputHandler}
         onFocus={() => setIsShowModal(true)}
       />
-      <Search />
-      {catList.length > 0 && (
+      <Search onClick={searchInputHandler} />
+      {catList.length > 0 && isShowModal && (
         <div className={styles.list}>
           <ul>
             {catList.map((item, idx) => (
@@ -72,7 +80,12 @@ const SearchBar: FC<Props> = (props: Props) => {
   return (
     <>
       {width <= 375 && isShowModal ? (
-        <ModalSearch setIsShowModal={setIsShowModal}>{form}</ModalSearch>
+        <ModalSearch
+          setIsShowModal={setIsShowModal}
+          setFilteredValue={setFilteredValue}
+        >
+          {form}
+        </ModalSearch>
       ) : (
         form
       )}

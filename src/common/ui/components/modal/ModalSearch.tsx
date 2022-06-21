@@ -7,20 +7,24 @@ import styles from "./ModalSearch.module.scss";
 interface Props {
   children: ReactNode;
   setIsShowModal: (isShowModal: boolean) => void;
+  setFilteredValue: (filteredValue: string) => void;
 }
 
 const ModalSearch: FC<Props> = (props: Props) => {
-  const { children, setIsShowModal } = props;
+  const { children, setIsShowModal, setFilteredValue } = props;
   const modalRoot = document.getElementById("modal");
 
   return (
     <>
       {modalRoot ? (
         createPortal(
-          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.modal}>
             <div
               className={styles["nav-toggle"]}
-              onClick={() => setIsShowModal(false)}
+              onClick={() => {
+                setIsShowModal(false);
+                setFilteredValue("");
+              }}
             >
               <Close />
             </div>

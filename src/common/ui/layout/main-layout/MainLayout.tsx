@@ -7,19 +7,13 @@ import styles from "./MainLayout.module.scss";
 interface Props {
   children: ReactNode;
   isShowModal?: boolean;
-  setIsShowModal?: (isShowModal: boolean) => void;
 }
 
 const MainLayout: FC<Props> = (props: Props) => {
-  const { children, isShowModal, setIsShowModal } = props;
+  const { children, isShowModal } = props;
 
   return (
-    <div
-      className={`${styles.layout} ${isShowModal && styles.showModal}`}
-      onClick={() => {
-        if (setIsShowModal) setIsShowModal(false);
-      }}
-    >
+    <div className={`${styles.layout} ${isShowModal && styles.showModal}`}>
       <Header />
       {children}
       <Footer />

@@ -1,36 +1,17 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import ImageSquareWrapper from "../../../common/ui/components/image-square-wrapper";
 import MoreText from "../../../common/ui/components/more-text";
-import { doGetPopularBreeds } from "../../api";
 import { Breed } from "../model";
 
 import styles from "./SubHero.module.scss";
 
 interface Props {
-  setIsLoading: (isLoading: boolean) => void;
+  mostSearchedBreeds: Array<Breed>;
 }
 
 const SubHero: FC<Props> = (props: Props) => {
-  const { setIsLoading } = props;
-  const [mostSearchedBreeds, setMostSearchedBreeds] = useState<Array<Breed>>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-
-      const response = await doGetPopularBreeds(4);
-      const responseData = response.data;
-      const breedData = responseData.map((data: any) => {
-        return { name: data.name, image: data.image.url };
-      });
-
-      setMostSearchedBreeds(breedData);
-      setIsLoading(false);
-    };
-
-    fetchData();
-  }, [setIsLoading]);
+  const { mostSearchedBreeds } = props;
 
   return (
     <section className={styles["sub-hero"]}>

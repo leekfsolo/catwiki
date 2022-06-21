@@ -84,7 +84,7 @@ const BreedDetail = () => {
 
       fetchData();
     }
-  }, [breed_id]);
+  }, [breed_id, navigate]);
 
   return (
     <MainLayout>

@@ -1,16 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { ReactComponent as Search } from "../../../../common/ui/assets/images/search.svg";
+import ModalSearch from "../../../../common/ui/components/modal/ModalSearch";
+import useWindowSize from "../../../../common/utils/hooks/useWindowSize";
 import { doGetBreeds } from "../../../api";
 import { Breed } from "../../model";
 
 import styles from "./SearchBar.module.scss";
 
-const SearchBar = () => {
+interface Props {
+  isShowModal: boolean;
+  setIsShowModal: (isShowModal: boolean) => void;
+}
+
+const SearchBar: FC<Props> = (props: Props) => {
+  const { isShowModal, setIsShowModal } = props;
   const [catList, setCatList] = useState<Array<Breed>>([]);
   const [filteredValue, setFilteredValue] = useState<string>("");
   const catInputRef = useRef<HTMLInputElement>(null);
+  const { width } = useWindowSize();
 
   const catInputHandler = () => {
     if (catInputRef.current) {
@@ -36,13 +45,14 @@ const SearchBar = () => {
     } else setCatList([]);
   }, [filteredValue]);
 
-  return (
-    <form className={styles.form}>
+  const form = (
+    <form className={`${styles.form} ${isShowModal && styles.showModal}`}>
       <input
         type="text"
         placeholder="Enter your breed"
         ref={catInputRef}
         onInput={catInputHandler}
+        onFocus={() => setIsShowModal(true)}
       />
       <Search />
       {catList.length > 0 && (
@@ -57,6 +67,16 @@ const SearchBar = () => {
         </div>
       )}
     </form>
+  );
+
+  return (
+    <>
+      {width <= 375 && isShowModal ? (
+        <ModalSearch setIsShowModal={setIsShowModal}>{form}</ModalSearch>
+      ) : (
+        form
+      )}
+    </>
   );
 };
 

@@ -85,6 +85,8 @@
 @media (max-width: 376px) {
   .form {
     margin: 0;
+    border: 1px solid colors.$black;
+    border-radius: 60px;
 
     input {
       padding: 8px 25px 8px 10px;
@@ -95,6 +97,19 @@
       width: 15px;
       right: 5px;
       top: -7px;
+    }
+
+    &.showModal {
+      input {
+        padding: 12px 45px 12px 20px;
+        font-size: 18px;
+      }
+
+      svg {
+        width: 30px;
+        top: 0;
+        right: 10px;
+      }
     }
   }
 }

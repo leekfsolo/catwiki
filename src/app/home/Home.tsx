@@ -7,11 +7,12 @@ import SubHero from "./sub-hero";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isShowModal, setIsShowModal] = useState<boolean>(false);
 
   return (
-    <MainLayout>
+    <MainLayout isShowModal={isShowModal} setIsShowModal={setIsShowModal}>
       <Loading isOpen={isLoading} />
-      <Hero />
+      <Hero setIsShowModal={setIsShowModal} isShowModal={isShowModal} />
       <SubHero setIsLoading={setIsLoading} />
       <Introduction />
     </MainLayout>

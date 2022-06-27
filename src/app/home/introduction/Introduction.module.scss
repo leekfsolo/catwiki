@@ -39,44 +39,15 @@
     }
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 0 27px;
-
-    .col {
-      width: 100%;
-
-      .wrapper {
-        width: 100%;
-
-        img {
-          border-radius: 24px;
-          max-width: 273px;
-          display: block;
-          margin-left: auto;
-        }
-
-        .img-row {
-          width: 100%;
-        }
-
-        .img-col {
-          max-width: 167px;
-          min-height: 273px;
-        }
+  .masonry {
+    > div {
+      img {
+        border-radius: 24px;
       }
 
-      &:first-child {
-        display: flex;
-        flex-direction: column;
-        gap: 27px 0;
-      }
-
-      &:last-child {
-        .img-col {
-          max-width: 238px;
-        }
+      &:nth-child(odd) img {
+        display: block;
+        margin-left: auto;
       }
     }
   }

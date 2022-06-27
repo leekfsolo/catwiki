@@ -1,11 +1,11 @@
 .layout {
   padding: 36px 128px 0 128px;
+  position: relative;
 }
 
 @media (max-width: 376px) {
   .layout {
     padding: 18px 18px 0 18px;
-    position: relative;
 
     &.showModal::before {
       content: "";

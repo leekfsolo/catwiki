@@ -19,6 +19,11 @@
       align-items: center;
       gap: 50px;
 
+      img {
+        width: 170px;
+        height: 170px;
+      }
+
       .description {
         color: colors.$text-default;
 
@@ -30,6 +35,71 @@
         p {
           font-size: 18px;
           font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .popular {
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .popular {
+    h1 {
+      font-size: 32px;
+    }
+
+    .content {
+      .breed {
+        img {
+          width: 140px;
+          height: 140px;
+        }
+
+        .description {
+          h2 {
+            font-size: 32px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .popular {
+    h1 {
+      font-size: 28px;
+    }
+
+    .content {
+      .breed {
+        flex-direction: column;
+        gap: 0px;
+
+        img {
+          width: 170px;
+          height: 170px;
+        }
+
+        .description {
+          h2 {
+            font-size: 24px;
+          }
+
+          p {
+            font-size: 14px;
+          }
         }
       }
     }

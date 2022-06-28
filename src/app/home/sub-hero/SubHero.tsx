@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import ImageSquareWrapper from "../../../common/ui/components/image-square-wrapper";
@@ -27,10 +28,10 @@ const SubHero: FC<Props> = (props: Props) => {
           </Link>
         </div>
 
-        <div className={styles.cards}>
+        <Grid margin={0} container className={styles.cards} spacing={2}>
           {mostSearchedBreeds &&
             mostSearchedBreeds.map((breed, idx) => (
-              <div className={styles.card} key={idx}>
+              <Grid item md={3} xs={6} className={styles.card} key={idx}>
                 <ImageSquareWrapper
                   url={breed.image}
                   alt={breed.name}
@@ -38,9 +39,9 @@ const SubHero: FC<Props> = (props: Props) => {
                   size="sm"
                 />
                 <p>{breed.name}</p>
-              </div>
+              </Grid>
             ))}
-        </div>
+        </Grid>
       </div>
     </section>
   );

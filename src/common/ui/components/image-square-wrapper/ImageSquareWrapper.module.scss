@@ -21,44 +21,4 @@
     border-radius: 14px;
     z-index: -1;
   }
-
-  &.xs {
-    img {
-      width: 170px;
-      height: 170px;
-    }
-  }
-  &.sm {
-    img {
-      width: 220px;
-      height: 220px;
-    }
-  }
-  &.md {
-    img {
-      width: 270px;
-      height: 270px;
-    }
-  }
-  &.lg {
-    img {
-      width: 370px;
-      height: 370px;
-    }
-  }
-}
-
-@media (max-width: 376px) {
-  .wrapper {
-    &.sm {
-      img {
-        width: 134px;
-        height: 134px;
-      }
-    }
-
-    &.highlight::before {
-      left: -5px;
-    }
-  }
 }

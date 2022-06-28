@@ -51,7 +51,7 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 576px) {
   .logo {
     font-size: 14px !important;
     font-weight: 400 !important;
@@ -60,12 +60,8 @@
       font-size: 24px !important;
     }
 
-    &.lg {
-      span {
-        img {
-          display: none;
-        }
-      }
+    img {
+      width: 24px !important;
     }
   }
 }

@@ -82,6 +82,30 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .form {
+    margin-top: 20px;
+
+    input {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .form {
+    input {
+      font-size: 14px;
+      padding: 10px 35px 10px 15px;
+    }
+
+    svg {
+      top: -5px;
+      right: 5px;
+    }
+  }
+}
+
 @media (max-width: 376px) {
   .form {
     margin: 0;

@@ -79,7 +79,7 @@ const SearchBar: FC<Props> = (props: Props) => {
 
   return (
     <>
-      {width <= 375 && isShowModal ? (
+      {width <= 600 && isShowModal ? (
         <ModalSearch
           setIsShowModal={setIsShowModal}
           setFilteredValue={setFilteredValue}

@@ -3,7 +3,19 @@
   position: relative;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 992px) {
+  .layout {
+    padding: 32px 60px 0 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 28px 48px 0 48px;
+  }
+}
+
+@media (max-width: 576px) {
   .layout {
     padding: 18px 18px 0 18px;
 

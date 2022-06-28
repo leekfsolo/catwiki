@@ -12,7 +12,7 @@ interface Props {
 }
 
 const MainLayout: FC<Props> = (props: Props) => {
-  const { children, isShowModal, isOpen = false } = props;
+  const { children, isShowModal = false, isOpen = false } = props;
 
   return (
     <div className={`${styles.layout} ${isShowModal && styles.showModal}`}>

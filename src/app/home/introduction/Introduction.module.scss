@@ -1,10 +1,11 @@
 @use "../../../common/ui/assets/colors";
 
 .introduction {
-  padding: 80px 100px;
+  padding: 80px 70px 80px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 
   .content {
     max-width: 45%;
@@ -53,15 +54,11 @@
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 1200px) {
   .introduction {
-    padding: 0;
-    flex-direction: column;
-    margin-top: 60px;
+    padding: 60px 50px 60px 80px;
 
     .content {
-      max-width: 100%;
-
       h2 {
         font-size: 40px;
 
@@ -74,33 +71,44 @@
         margin: 40px 0 27px 0;
       }
     }
+  }
+}
 
-    .grid {
-      margin-top: 60px;
-      gap: 0 17px;
+@media (max-width: 900px) {
+  .introduction {
+    padding: 40px 30px 40px 60px;
 
-      .col {
-        .wrapper {
-          img {
-            max-width: 173px !important;
-          }
+    .content {
+      h2 {
+        font-size: 28px;
 
-          .img-col {
-            max-width: 123px !important;
-            min-height: 184px !important;
-          }
-        }
-
-        &:first-child {
-          gap: 17px 0;
-        }
-
-        &:last-child {
-          .img-col {
-            max-width: 150px !important;
-          }
+        &::before {
+          width: 40px;
         }
       }
+
+      p {
+        margin: 30px 0 20px 0;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .introduction {
+    padding: 0;
+    flex-direction: column;
+    margin-top: 60px;
+
+    .content {
+      max-width: 100%;
+    }
+
+    .masonry {
+      margin-top: 40px;
+      position: relative;
+      left: 20px;
     }
   }
 }

@@ -17,16 +17,16 @@ const Introduction: FC<Props> = (props: Props) => {
 
   const masonryItems = [
     {
-      src: "https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=80&width=273",
-      height: 167,
+      src: "https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=80",
+      width: "100%",
     },
     {
-      src: "https://images.unsplash.com/photo-1607242792481-37f27e1d74e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=80&width=238",
-      height: 385,
+      src: "https://images.unsplash.com/photo-1607242792481-37f27e1d74e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=80",
+      width: "80%",
     },
     {
-      src: "https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=80&width=195",
-      height: 293,
+      src: "https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&q=80",
+      width: "70%",
     },
   ];
   let firstBreedId = "";
@@ -47,8 +47,8 @@ const Introduction: FC<Props> = (props: Props) => {
       </div>
       <Masonry columns={2} spacing={2} className={styles.masonry}>
         {masonryItems.map((item, idx) => (
-          <Paper sx={{ height: item.height, boxShadow: "none" }} key={idx}>
-            <img src={item.src} alt="" />
+          <Paper sx={{ boxShadow: "none" }} key={idx}>
+            <img src={item.src} alt="" style={{ width: item.width }} />
           </Paper>
         ))}
       </Masonry>

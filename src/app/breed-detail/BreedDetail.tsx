@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ImageSquareWrapper from "../../common/ui/components/image-square-wrapper";
@@ -97,7 +98,6 @@ const BreedDetail = () => {
                 url={breed.image}
                 alt={breed.name}
                 highlight
-                size="lg"
               />
             </div>
             <div className={styles["breed-info"]}>
@@ -123,13 +123,15 @@ const BreedDetail = () => {
           </section>
           <section className={styles.photos}>
             <h2>Other Photos</h2>
-            <div className={styles.list}>
+            <Grid container className={styles.list} spacing={2}>
               {breed &&
                 breed.photos &&
                 breed.photos.map((photo, idx) => (
-                  <ImageSquareWrapper url={photo} alt="" key={idx} size="md" />
+                  <Grid item md={3} xs={6} justifyContent="space-between">
+                    <ImageSquareWrapper url={photo} alt="" key={idx} />
+                  </Grid>
                 ))}
-            </div>
+            </Grid>
           </section>
         </main>
       )}

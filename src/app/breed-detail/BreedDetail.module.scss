@@ -1,15 +1,23 @@
 @use "../../common/ui/assets/colors";
 
 .breed {
-  display: grid;
-  grid-template-columns: 350px auto;
-  gap: 0 115px;
+  display: flex;
+  gap: 0 50px;
   padding: 50px;
   color: colors.$text-default;
 
   .breed-img {
-    img {
-      min-height: 350px;
+    max-width: 350px;
+    min-width: 250px;
+    width: 100%;
+
+    div {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 350px;
+      }
     }
   }
 
@@ -56,8 +64,79 @@
     gap: 45px 0;
 
     img {
-      width: 270px;
-      min-height: 270px;
+      width: 100%;
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .breed {
+    gap: 0 60px;
+    padding: 40px;
+
+    .breed-info {
+      h1 {
+        font-size: 32px;
+      }
+
+      .description {
+        font-size: 16px;
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .breed {
+    gap: 0 40px;
+    padding: 0px;
+
+    .breed-img {
+      max-width: 250px;
+      min-width: 150px;
+
+      div {
+        img {
+          height: 250px;
+        }
+      }
+    }
+
+    .breed-info {
+      h1 {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 14px;
+        margin: 15px 0;
+      }
+
+      .detail {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .breed {
+    flex-direction: column;
+
+    .breed-img {
+      margin: 0 auto 20px;
+    }
+
+    .breed-info {
+      .detail {
+        p {
+          font-size: 10px;
+        }
+      }
     }
   }
 }

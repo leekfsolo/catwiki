@@ -2,30 +2,66 @@
 
 .content {
   p {
-    font-size: 16px;
     font-weight: 500;
-    display: grid;
-    grid-template-columns: 180px 400px;
+    display: flex;
+    gap: 20px;
 
     span {
+      font-size: 16px;
       font-weight: 700;
       text-transform: capitalize;
+      min-width: 150px;
     }
 
     .rating {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 0 10px;
+      gap: 12px;
 
       .bar {
-        width: 60px;
-        height: 12px;
+        width: 40px;
+        height: 10px;
         border-radius: 8px;
         background-color: colors.$inactive;
 
         &.vote {
           background-color: colors.$active;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    p {
+      span {
+        font-size: 13px;
+        min-width: 120px;
+      }
+
+      .rating {
+        gap: 5px;
+
+        .bar {
+          width: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    p {
+      span {
+        font-size: 10px;
+        min-width: 100px;
+      }
+
+      .rating {
+        .bar {
+          width: 30px;
         }
       }
     }

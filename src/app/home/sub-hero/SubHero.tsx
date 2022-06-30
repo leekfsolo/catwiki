@@ -36,7 +36,6 @@ const SubHero: FC<Props> = (props: Props) => {
                   url={breed.image}
                   alt={breed.name}
                   highlight={idx === 0}
-                  size="sm"
                 />
                 <p>{breed.name}</p>
               </Grid>

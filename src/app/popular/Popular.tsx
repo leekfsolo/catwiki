@@ -40,11 +40,7 @@ const Popular = () => {
         <div className={styles.content}>
           {breeds.map((breed, idx) => (
             <div key={idx} className={styles.breed}>
-              <ImageSquareWrapper
-                size="xs"
-                url={breed.image}
-                alt={breed.name}
-              />
+              <ImageSquareWrapper url={breed.image} alt={breed.name} />
               <div className={styles.description}>
                 <h2>{`${idx + 1}. ${breed.name}`}</h2>
                 <p>{breed.description}</p>
